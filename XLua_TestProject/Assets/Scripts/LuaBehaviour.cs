@@ -48,6 +48,7 @@ public class LuaBehaviour : MonoBehaviour
         //这样就可以通过Global.XXX来访问全局变量
         
         luaEnv.DoString(luaScript.text, luaScript.name, scriptScopeTable);  //执行脚本
+        // luaEnv.DoString("require 'LuaTestScript'");
         
         Action luaAwake = scriptScopeTable.Get<Action>("awake");
         scriptScopeTable.Get("start", out luaStart);
